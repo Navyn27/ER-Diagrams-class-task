@@ -1,0 +1,87 @@
+collection === table
+document === record === tuple === row
+
+*show databases  
+ -> show dbs
+
+*use database 
+ -> use dbName
+
+*drop database/collection 
+ //Use the DB you want to drop then
+ -> db.dropDatabase()
+
+*Create new db
+ -> use newDb
+
+*creating a new collection 
+ -> db.createCollection('collectionName')
+
+*show collections on a db
+ -> show collections
+
+*inserting data/a row/a document
+ -> db.collectionName.insert({dataIdentifier:content,
+ dataIdentifier:content,
+ objectDataIdentifier:object,
+ arrayIdentifier:array})
+
+*inserting many documents in a collection at once
+ ->db.collectionName.insertMany([{data}],[{data}])
+
+*selecting / returning rows
+ -> db.collectionName.find()
+
+*Conditional returning
+ -> db.collectionName.find({dataIdentifier:content})
+
+*sorting (ordering)
+ -> db.collectionName.find().sort({dataIdentifierToOrderBy:1 or -1})
+
+1: is for ascending order
+-1: is for descending order
+
+*limit
+ -> db.collectionName.find().limit(2)
+
+*forEach
+ -> db.collectionName.find().forEach(function(doc){print("Shit:"+doc.identifier)})
+
+ *findOne
+  -> db.collectionName.findOne()
+
+*Updating(replacing)
+ -> db.collectionName.update({name:'Yvan'},
+
+ {
+     name:'Sugira',
+     age:'30',
+ }
+ {
+     upsert:true
+ }
+ )
+
+*Updating(the real updation)
+ ->db.collectionName.update({name:'Yvan'},
+{
+ $set:{
+     name:'Ishimwe'
+ }
+}
+ )
+
+*pretty
+-> .pretty()
+
+*increment
+-> db.collectionName.update({name:'Yvan'},{$inc:{age:10}});
+
+
+sub-documents
+finding basing on nested documents
+
+greate
+
+createIndex [?]
+$search:"" [?] 
